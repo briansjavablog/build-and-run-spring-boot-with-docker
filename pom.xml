@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.briansjavablog</groupId>
+    <artifactId>docker-boot-intro</artifactId>
+    <version>0.1.0</version>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.7.RELEASE</version>
+    </parent>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>		
+		</dependency>        
+    </dependencies>
+    <properties>
+        <java.version>1.8</java.version>
+        <jackson.mapper.version>1.5.6</jackson.mapper.version>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+				  <execution>
+				      <!-- <phase>deploy</phase> -->
+				      <configuration>
+				          <target>
+				        <!--       <exec executable="docker">
+				                  <arg value="build"/>
+				                  <arg value="-t"/>
+				                  <arg value="binfalse/bives-webapp:${project.version}"/>
+				                  <arg value="target"/>
+				              </exec> -->
+				              <exec executable="docker">
+				                  <arg value="build"/>
+				                  <arg value="-t"/>
+				                  <arg value="docker-spring-boot-intro:${project.version}"/>
+				                  <arg value="target"/>
+				              </exec>		              
+				          </target>
+				      </configuration>
+				      <goals>
+				          <goal>run</goal>
+				      </goals>
+				  </execution>
+				</executions>
+			</plugin>            
+        </plugins>
+    </build>
+</project>
