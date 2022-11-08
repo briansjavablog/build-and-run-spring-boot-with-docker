@@ -9,16 +9,12 @@ pipeline{
         }
         stage("Build application"){
             steps{
-                withCredentials([usernamePassword(credentialsId: 'DockerHub-credentials', passwordVariable: 'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
-                    sh "skaffold build"
-                }
+                sh "skaffold build"
             }
         }
         stage("Deploy application"){
             steps{
-                withCredentials([usernamePassword(credentialsId: 'DockerHub-credentials', passwordVariable: 'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
-                    sh "skaffold build"
-                }
+                sh "skaffold run"
             }
         }
     }
