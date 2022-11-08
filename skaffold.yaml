@@ -6,7 +6,7 @@ build:
   tagPolicy:
     gitCommit: {}
   artifacts:
-  - image: kamereon-poc
+  - image: striver901/kamereon-poc
     docker:
       dockerfile: Dockerfile
 manifests:
