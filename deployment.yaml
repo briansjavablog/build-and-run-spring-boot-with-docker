@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kamereon-poc
+  labels:
+    app: kamereon-poc
+spec:
+  ports:
+  - port: 8082
+    protocol: TCP
+  clusterIP: None
+  selector:
+    app: kamereon-poc
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kamereon-poc
+  labels:
+    app: kamereon-poc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kamereon-poc
+  template:
+    metadata:
+      labels:
+        app: kamereon-poc
+    spec:
+      containers:
+      - name: kamereon-poc
+        image: kamereon-poc

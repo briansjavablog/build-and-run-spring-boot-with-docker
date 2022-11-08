@@ -1,0 +1,18 @@
+apiVersion: skaffold/v3
+kind: Config
+metadata:
+  name: spring-boot-app
+build:
+  tagPolicy:
+    gitCommit: {}
+  artifacts:
+  - image: kamereon-poc
+    docker:
+      dockerfile: Dockerfile
+manifests:
+  rawYaml:
+  - deployment.yaml
+portForward:
+- resourceType: service
+  resourceName: kamereon-poc
+  port: 8082
