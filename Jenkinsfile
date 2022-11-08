@@ -9,12 +9,12 @@ pipeline{
         }
         stage("Build application"){
             steps{
-                skaffold build
+                sh "skaffold build"
             }
         }
         stage("Deploy application"){
             steps{
-                skaffold run
+                sh "skaffold run"
             }
         }
     }
