@@ -14,7 +14,7 @@ pipeline{
         }
         stage("Deploy application"){
             steps{
-
+                skaffold run
             }
         }
     }
