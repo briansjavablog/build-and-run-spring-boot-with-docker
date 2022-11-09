@@ -7,12 +7,6 @@ pipeline{
                 buildName "${env.MAJOR_VERSION}.${env.MINOR_VERSION}.${env.BUILD_NUMBER}"
             }
         }
-        stage("Install azure"){
-            steps{
-                sh "curl -L https://aka.ms/InstallAzureCli | bash"
-                sh "az login"
-            }
-        }
         stage("Build application"){
             steps{
                 withCredentials([usernamePassword(credentialsId: 'DockerHub-credentials', passwordVariable: 'DOCKER_REGISTRY_PWD', usernameVariable: 'DOCKER_REGISTRY_USER')]) {
