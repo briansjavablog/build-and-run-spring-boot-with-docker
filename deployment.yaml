@@ -30,7 +30,7 @@ spec:
         app: kamereon-poc
     spec:
       nodeSelector:
-        type: backend
+        nodePool: cluster
       containers:
       - name: kamereon-poc
         image: striver901/kamereon-poc
