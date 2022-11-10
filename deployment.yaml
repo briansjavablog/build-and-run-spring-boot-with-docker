@@ -29,8 +29,10 @@ spec:
       labels:
         app: kamereon-poc
     spec:
+      nodeSelector:
+        type: backend
       containers:
       - name: kamereon-poc
         image: striver901/kamereon-poc
         ports:
-          - containerPort:8080
+          - containerPort: 8080
