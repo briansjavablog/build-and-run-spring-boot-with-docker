@@ -32,4 +32,4 @@ spec:
       - name: kamereon-poc
         image: striver901/kamereon-poc
         ports:
-          - containerPort:8082
+          - containerPort:8080
