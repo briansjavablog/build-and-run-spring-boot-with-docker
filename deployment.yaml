@@ -9,6 +9,7 @@ spec:
   ports:
   - port: 8082
     protocol: TCP 
+    nodePort: 31514
   selector:
     app: kamereon-poc
 ---
