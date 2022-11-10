@@ -30,4 +30,4 @@ spec:
     spec:
       containers:
       - name: kamereon-poc
-        image: kamereon-poc
+        image: striver901/kamereon-poc
