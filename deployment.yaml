@@ -30,7 +30,7 @@ spec:
         app: kamereon-poc
     spec:
       nodeSelector:
-        nodePool: cluster
+        nodeName: aks-agentpool-11820299-vmss000002
       containers:
       - name: kamereon-poc
         image: striver901/kamereon-poc
