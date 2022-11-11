@@ -11,7 +11,8 @@ build:
       dockerfile: Dockerfile
 manifests:
   rawYaml:
-  - deployment.yaml
+  - k8s/deployment.yaml
+  - k8s/service.yaml
 portForward:
 - resourceType: service
   resourceName: kamereon-poc
