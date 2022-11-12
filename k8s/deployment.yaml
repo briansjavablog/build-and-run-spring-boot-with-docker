@@ -18,7 +18,7 @@ spec:
       - name: kamereon-poc
         image: striver901/kamereon-poc
         ports:
-          - containerPort: 80g
+          - containerPort: 80
         resources:
           requests:
             memory: "64Mi"
