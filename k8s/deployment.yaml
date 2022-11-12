@@ -5,7 +5,7 @@ metadata:
   labels:
     app: kamereon-poc
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: kamereon-poc
@@ -17,6 +17,8 @@ spec:
       containers:
       - name: kamereon-poc
         image: striver901/kamereon-poc
+        ports:
+          - containerPort: 80g
         resources:
           requests:
             memory: "64Mi"
