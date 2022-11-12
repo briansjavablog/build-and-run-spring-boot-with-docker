@@ -5,6 +5,7 @@ metadata:
   labels:
     app: kamereon-poc
 spec:
+  type: NodePort
   ports:
   - port: 8082
     protocol: TCP 
