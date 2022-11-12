@@ -5,9 +5,8 @@ metadata:
   labels:
     app: kamereon-poc
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
-  - port: 8082
-    protocol: TCP 
+  - port: 80
   selector:
     app: kamereon-poc
