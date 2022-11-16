@@ -2,12 +2,12 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
   namespace: kmr-poc
-  name: postgres-pv-volume  # Sets PV's name
+  name: postgres-pv  # Sets PV's name
   labels:
     type: local  # Sets PV's type to local
     app: postgres
 spec:
-  storageClassName: manual
+  storageClassName: default
   capacity:
     storage: 5Gi # Sets PV Volume
   accessModes:
@@ -23,7 +23,7 @@ metadata:
   labels:
     app: postgres
 spec:
-  storageClassName: manual
+  storageClassName: default
   accessModes:
     - ReadWriteMany  # Sets read and write access
   resources:
