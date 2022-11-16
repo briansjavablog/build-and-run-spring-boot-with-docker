@@ -1,6 +1,7 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
+  namespace: kmr-poc
   name: postgres-pv-volume  # Sets PV's name
   labels:
     type: local  # Sets PV's type to local
@@ -17,6 +18,7 @@ spec:
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
+  namespace: kmr-poc
   name: postgres-pv-claim  # Sets name of PVC
   labels:
     app: postgres

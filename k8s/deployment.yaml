@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  namespace: kmr-poc
   name: kamereon-poc
   labels:
     app: kamereon-poc
