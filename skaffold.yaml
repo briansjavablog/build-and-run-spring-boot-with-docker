@@ -13,7 +13,7 @@ manifests:
   rawYaml:
   - k8s/deployment.yaml
   - k8s/service.yaml
-  - k8s/config.yaml
+  - k8s/configmap.yaml
   - k8s/pv.yaml
   - k8s/postgres.yaml
 portForward:
