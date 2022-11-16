@@ -7,7 +7,6 @@ metadata:
     type: local  # Sets PV's type to local
     app: postgres
 spec:
-  storageClassName: default
   capacity:
     storage: 5Gi # Sets PV Volume
   accessModes:
