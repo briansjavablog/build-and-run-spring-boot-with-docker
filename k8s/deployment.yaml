@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: kmr-poc
+  name: kamereon-poc
+  labels:
+    app: kamereon-poc
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kamereon-poc
+  template:
+    metadata:
+      labels:
+        app: kamereon-poc
+    spec:
+      containers:
+      - name: kamereon-poc
+        image: striver901/kamereon-poc
+        ports:
+          - containerPort: 8082
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "1000m"
